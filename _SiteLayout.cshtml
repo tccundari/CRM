@@ -10,15 +10,27 @@
         <script src="~/Scripts/jquery-ui-1.10.3.js"></script>
         <script src="~/Scripts/modernizr-2.6.2.js"></script>
         <meta name="viewport" content="width=device-width" />
+
+        <style type="text/css">
+            .bulletInTop{
+                height: 25px; 
+                margin-bottom: -6px;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                // Correção de largura
+                $("#DivPrincipal").width($("#DivPrincipal").width() - 25);
+            });
+        </script>
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
+            <div class="header content-wrapper">
                 <div class="float-left">
-                    <p class="site-title"><a href="~/">your logo here</a></p>
+                    <p class="site-title" style=""><a href="~/"><img alt="" height="50" src="~/Images/Logos/1_Primary_logo_on_transparent_273x75.png" /></a></p>
                 </div>
-                <div class="float-right">
-                    <section id="login">
+                <div id="divHeaderLogIn"class="float-right">
                         @if (WebSecurity.IsAuthenticated) {
                             <text>
                                 Hello, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
@@ -27,25 +39,37 @@
                                     <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
                                 </form>
                             </text>
-                        } else {
-                            <ul>
-                                <li><a href="~/Account/Register">Register</a></li>
-                                <li><a href="~/Account/Login">Log in</a></li>
-                            </ul>
                         }
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li><a href="~/">Home</a></li>
-                            <li><a href="~/About">About</a></li>
-                            <li><a href="~/Contact">Contact</a></li>
-                        </ul>
-                    </nav>
+                        else
+                        {
+                            <input type="button" class="btn btn-default" value="Cadastrar"  />
+                            <input type="button" class="btn btn-default" value="Entrar" />
+                        }
                 </div>
             </div>
         </header>
         <div id="body">
-            @RenderSection("featured", required: false)
+            <section class="featured">
+                <div class="content-wrapper">
+                    <div id="DivPrincipal" class="divFrame" style="padding-top: 15px; width: 100%;">
+                        <img src="~/Images/business.jpg" style="width: 450px; float: left;     border-radius: 10px 150px 150px 10px;"/>
+                        <div style="float: left; position: absolute; margin-left: 465px; padding-right: 10px">
+                            <h1 class="title">Conheça o IZeny!</h1>
+                            O IZeny é uma ferramenta desenvolvida para atender as necessidades fundamentais de sua empresa com fóco na gestão comercial.
+                            Saía do papel, chega de usar planilhas complicadas, sistemas de baixa qualidade que só dão problema. 
+                            O IZeny está aqui para lhe ajudar a planejar, registrar e utilizar da melhor forma possível os dados de seu negócio.
+                            <ul style="list-style-type: none;">
+                                <li><img src="~/Images/Icons/check_green_icon.png" class="bulletInTop" /><b>Prático:</b> Não precisa instalar nada em seu computador, faça tudo pelo nosso site.</li>
+                                <li><img src="~/Images/Icons/check_green_icon.png" class="bulletInTop" /><b>Seguro:</b> Os dados de sua empresa estão seguros com a gente.</li>
+                                <li><img src="~/Images/Icons/check_green_icon.png" class="bulletInTop" /><b>Eficiente:</b> Disponibilizamos relatórios e graficos para auxilia-lo em suas análises.</li>
+                                <li><img src="~/Images/Icons/check_green_icon.png" class="bulletInTop" /><b>GRÁTIS:</b> Temos um plano de uso gratúito!</li>
+                            </ul>
+
+                            <a href="">Saiba Mais...</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
@@ -53,7 +77,7 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Web Page</p>
+                    <p>&copy; @DateTime.Now.Year - IZENY - <i>Um produto da Cundari Softwares.</i></p>
                 </div>
             </div>
         </footer>

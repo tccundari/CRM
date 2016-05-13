@@ -1,30 +1,33 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background-color: #fff;
     margin: 0;
     padding: 0;
+	height: 100%;
 }
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+	height: 100%;
 }
 
 a {
-    color: #333;
+    color: #337ab7;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
     text-decoration: underline;
+	font-weight: bold;
+	font-size: 0.9em;
 }
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #337ab7;
     }
 
     a:hover {
@@ -37,9 +40,10 @@ nav, section {
 }
 
 mark {
-    background-color: #a6dbed;
+    background-color: #a9f8a8;
     padding-left: 5px;
     padding-right: 5px;
+	color: #497456;
 }
 
 .float-left {
@@ -60,7 +64,7 @@ mark {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #000;
+    color: #296f09;
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -93,43 +97,95 @@ h5, h6 {
 
 /* main layout
 ----------------------------------------------------------*/
+.divFrame {
+	float:left; 
+	position: relative;
+	background-color: #fcfffb;
+    color: #999;
+    padding: 5px 15px 15px 15px;
+	margin-bottom: 15px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 1px 13px #ccc;
+}
+
+	.divFrame h2 {
+		margin-top: 0;
+	}
+
+	.metade {
+		width: 45%; 
+		height: 80px; 
+	}
+
+	.metade img {
+		position: absolute;
+		height: 85px; 
+	}
+
 .content-wrapper {
     margin: 0 auto;
-    max-width: 960px;
+	width: 80%;
 }
 
 #body {
-    background-color: #efeeef;
+    background-color: #fff;
     clear: both;
     padding-bottom: 35px;
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
     }
 
+	.header {
+		background-color: #49df5d;
+		height: 50px;
+		width: 100%;
+		box-shadow: 0 1px 3px #000;
+		margin-bottom: 25px;
+	}
+
 header .content-wrapper {
-    padding-top: 20px; 
+    padding-top: 0; 
 }
 
 footer {
     clear: both;
     background-color: #e2e2e2;
     font-size: .8em;
-    height: 100px;
+    height: 50px;
+	bottom: 0; 
+	position: relative;
 }
 
+#divHeaderLogIn {
+	margin-top: 10px;
+	margin-right: 90px;
+	font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+}
+
+	#divHeaderLogIn input {
+		font-size: 12px;
+		font-weight: bold;
+		font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+		padding: 4px 10px 4px 10px;
+	}
 
 /* site title
 ----------------------------------------------------------*/
+.title {
+	margin-top: 0;
+	color: forestgreen;
+    font-size: 12mm;
+	text-shadow: goldenrod 0 0 8px;
+}
+
 .site-title {
-    color: #c8c8c8;
+    color: #fff;
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
     margin: 0;
@@ -137,44 +193,11 @@ footer {
 
 .site-title a, .site-title a:hover, .site-title a:active {
     background: none;
-    color: #c8c8c8;
+    color: #fff;
     outline: none;
-    text-decoration: none;
+    text-decoration: none;    
+	margin-left: 80px;
 }
-
-
-/* login
-----------------------------------------------------------*/
-#login {
-    display: block;
-    font-size: .85em;
-    margin: 0 0 10px;
-    text-align: right;
-}
-
-    #login a {
-        background-color: #d3dce0;
-        margin-left: 10px;
-        margin-right: 3px;
-        padding: 2px 3px;
-        text-decoration: none;
-    }
-
-    #login a.email {
-        background: none;
-        margin: 0;
-        padding: 0;
-        text-decoration: underline;
-    }
-
-    #login ul {
-        margin: 0;
-    }
-
-    #login li {
-        display: inline;
-        list-style: none;
-    }
 
 
 /* menu
@@ -207,24 +230,10 @@ ul#menu {
 
 /* page elements
 ----------------------------------------------------------*/
+
 /* featured */
-.featured {
-    background-color: #fff;
-}
-
-    .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        color: #3e5667;
-        padding: 20px 40px 30px 40px;
-    }
-
         .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
+            color: #333;
         }
 
         .featured p {
@@ -262,6 +271,26 @@ ol.round {
         margin: 25px 0;
         padding-left: 45px;
     }
+	
+        ol.round li.estoque {
+            background: url("../Images/Icons/estoque_blue.png") no-repeat;
+			background-size: 35px 35px;			
+        }
+		
+        ol.round li.cliente {
+            background: url("../Images/Icons/cliente_blue.png") no-repeat;
+			background-size: 35px 35px;			
+        }
+
+        ol.round li.fornecedor {
+            background: url("../Images/Icons/fornecedor_blue.png") no-repeat;
+			background-size: 35px 35px;			
+        }
+		
+        ol.round li.servico {
+            background: url("../Images/Icons/ordem_servico_blue.png") no-repeat;
+			background-size: 35px 35px;			
+        }
 
         ol.round li.zero {
             background: url("../Images/orderedList0.png") no-repeat;
@@ -424,7 +453,7 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
+/*input, textarea {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;
@@ -432,7 +461,7 @@ input, textarea {
     margin: 5px 0 6px 0;
     padding: 5px;
     width: 300px;
-}
+}*/
 
 textarea {
     font-family: inherit;
@@ -449,7 +478,7 @@ textarea {
         width: auto;
     }
 
-    input[type="submit"],
+    /*input[type="submit"],
     input[type="button"],
     button {
         background-color: #d3dce0;
@@ -460,15 +489,15 @@ textarea {
         padding: 7px;
         margin-right: 8px;
         width: auto;
-    }
+    }*/
 
-    td input[type="submit"],
+    /*td input[type="submit"],
     td input[type="button"],
     td button {
         font-size: 1em;
         padding: 4px;
         margin-right: 4px;
-    }
+    }*/
 
 /* info and errors */
 .message-info {
@@ -586,6 +615,58 @@ tr.pager td {
     padding: 0 0.25em 0 0;
 }
 
+	/* botões 
+	-----------------------------------------------------------*/
+	.btn {
+		display: inline-block;
+		padding: 6px 12px;
+		margin-bottom: 0;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 1.42857143;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 4px;
+	}
+
+	.btn-default {
+		color: goldenrod;
+		background-color: #fff;
+		border-color: #ccc;
+	}
+
+	.btn-default:hover {
+		color: #333;
+		background-color: #e6e6e6;
+		border-color: #adadad;
+	}
+
+	.btn-primary:hover {
+		color: #fff;
+		background-color: #286090;
+		border-color: #204d74;
+	}
+
+	.btn:hover, .btn:focus, .btn.focus {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.btn-primary {
+		color: #fff;
+		background-color: #337ab7;
+		border-color: #2e6da4;
+	}
 
 /********************
 *   Mobile Styles   *
@@ -604,37 +685,6 @@ tr.pager td {
         margin: 10px;
         text-align: center;
     }
-
-    /* login */
-    #login {
-        font-size: .85em;
-        margin: 0 0 12px;
-        text-align: center;
-    }
-
-        #login ul {
-            margin: 5px 0;
-            padding: 0;
-        }
-
-        #login li {
-            display: inline;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #login a {
-            background: none;
-            color: #999;
-            font-weight: 600;
-            margin: 2px;
-            padding: 0;
-        }
-
-        #login a:hover {
-            color: #333;
-        }
 
     /* menu */
     nav {
@@ -750,7 +800,7 @@ tr.pager td {
         padding: 10px 0;
     }
 
-        footer p {
-            margin: 0;
-        }
+    footer p {
+        margin: 0;
+    }
 }
